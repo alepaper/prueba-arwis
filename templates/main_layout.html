@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {% block head_content %} {% endblock %} {% load static %}
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+        <link rel="stylesheet" href="https://cdn.iconmonstr.com/1.3.0/css/iconmonstr-iconic-font.min.css" />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-md navbar-light bg-dark">
+            <a class="navbar-brand text-danger" href="{% url 'home'%}"> Sing </a>
+            <button
+                class="navbar-toggler d-none"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarNav"
+                aria-controls="navbarNav"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+                {% block menu %} {% endblock %}
+            </div>
+        </nav>
+
+        {% block content %} {% endblock %}
+
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+        {% block scripts %} {% endblock %}
+    </body>
+</html>
